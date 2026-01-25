@@ -120,7 +120,7 @@ const Communication = ({ isDarkMode }) => {
                   
                   <div className="flex flex-wrap gap-4 mb-6 text-xs font-bold uppercase tracking-widest">
                     <span className="flex items-center gap-2 text-orange-500">
-                      <Calendar size={14} /> 2023 (BUT MMI)
+                      <Calendar size={14} /> 2026 (BUT MMI)
                     </span>
                     <span className="flex items-center gap-2 text-blue-400">
                       <Users size={14} /> Projet de Groupe
