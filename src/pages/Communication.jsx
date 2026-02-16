@@ -31,7 +31,7 @@ const Communication = ({ isDarkMode }) => {
                 {/* VISUEL (Nettoyé : Image seule) */}
                 <div className="bg-zinc-800 min-h-[300px] relative overflow-hidden group">
                    <img 
-                     src="/images/eco.webp" 
+                     src="/images/Eco.webp" 
                      alt="Maquette Eco-Tasty" 
                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                      onError={(e) => {
