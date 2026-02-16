@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Figma, Users, Calendar, ArrowRight, Leaf, Youtube, Clapperboard, Video } from 'lucide-react';
+import { Figma, Users, Calendar, ArrowRight, Youtube, Clapperboard, Video } from 'lucide-react';
 
 const Communication = ({ isDarkMode }) => {
   
@@ -28,17 +28,21 @@ const Communication = ({ isDarkMode }) => {
             <div className={`border-2 border-orange-500/30 overflow-hidden transition-all hover:border-orange-500 ${isDarkMode ? 'bg-zinc-900' : 'bg-white'}`}>
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 
-                {/* VISUEL */}
+                {/* VISUEL (Nettoyé : Image seule) */}
                 <div className="bg-zinc-800 min-h-[300px] relative overflow-hidden group">
                    <img 
-                     src="/images/Eco.webp" 
+                     src="/images/eco.webp" 
                      alt="Maquette Eco-Tasty" 
-                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-60"
-                     onError={(e) => e.target.style.display = 'none'} 
+                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                     onError={(e) => {
+                       e.target.style.display = 'none';
+                       // Petit fallback si l'image plante
+                       e.target.parentNode.style.backgroundColor = '#18181b';
+                       e.target.parentNode.innerHTML += '<div class="absolute inset-0 flex items-center justify-center text-gray-500">Image non trouvée</div>';
+                     }} 
                    />
-                   <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-green-900/40 to-black/60 pointer-events-none">
-                      <Leaf size={80} className="text-green-500 opacity-80" />
-                   </div>
+                   
+                   {/* Label en bas */}
                    <div className="absolute bottom-4 left-4 right-4 bg-black/80 p-4 border-l-4 border-green-500 backdrop-blur-sm">
                       <p className="text-white font-bold uppercase tracking-widest text-xs">Maquette Application Mobile</p>
                    </div>
@@ -120,7 +124,7 @@ const Communication = ({ isDarkMode }) => {
                   
                   <div className="flex flex-wrap gap-4 mb-6 text-xs font-bold uppercase tracking-widest">
                     <span className="flex items-center gap-2 text-orange-500">
-                      <Calendar size={14} /> 2026 (BUT MMI)
+                      <Calendar size={14} /> 2023 (BUT MMI)
                     </span>
                     <span className="flex items-center gap-2 text-blue-400">
                       <Users size={14} /> Projet de Groupe
@@ -136,7 +140,7 @@ const Communication = ({ isDarkMode }) => {
 
                   <div className={`space-y-6 leading-relaxed text-content text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                     <p>
-                      <strong>Contexte :</strong> Réalisation d'une interview promotionnelle fictive (1m30) pour un artiste imaginaire, "Jess Anderson". L'objectif était de créer un storytelling cohérent, de la conception du personnage à la post-production finale.
+                      <strong>Contexte :</strong> Réalisation d'une interview promotionnelle fictive (1m30) pour un artiste imaginaire, "Jess Anderson". L'objectif était de créer un storytelling cohérent, de la genèse du personnage à la post-production finale.
                     </p>
 
                     <div className="border-l-2 border-orange-500/50 pl-4 space-y-2">
