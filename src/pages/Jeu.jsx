@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Gamepad2, Hammer, Code, Monitor, Boxes, ArrowRight } from 'lucide-react';
+import { Gamepad2, Hammer, Code, Boxes, ArrowRight } from 'lucide-react';
 
 const Jeu = ({ isDarkMode }) => {
   
@@ -18,13 +18,13 @@ const Jeu = ({ isDarkMode }) => {
             GAME DESIGN
           </h1>
           <p className="text-lg max-w-2xl mx-auto leading-relaxed text-content">
-            Conception d'environnements interactifs et Level Design sur moteurs de jeu.
+            Conception d'environnements interactifs, Game Logic et Level Design.
           </p>
         </div>
 
         <div className="space-y-16">
 
-            {/* --- PROJET : S&BOX --- */}
+            {/* --- PROJET : RETRY (S&BOX) --- */}
             <div className={`border-2 border-orange-500/30 overflow-hidden transition-all hover:border-orange-500 ${isDarkMode ? 'bg-zinc-900' : 'bg-white'}`}>
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 
@@ -32,19 +32,15 @@ const Jeu = ({ isDarkMode }) => {
                 <div className="bg-zinc-800 min-h-[300px] relative overflow-hidden group">
                    <img 
                      src="/images/S&BOX.png" 
-                     alt="Level Design S&box" 
+                     alt="Projet Retry sur S&box" 
                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80"
                      onError={(e) => {
                         e.target.style.display = 'none';
-                        e.target.parentNode.className += " flex items-center justify-center";
-                        e.target.parentNode.innerHTML += '<div class="text-center p-4"><p class="text-orange-500 font-bold">Image S&box manquante</p><p class="text-xs">Ajoute sbox.webp dans public/images</p></div>';
+                        e.target.parentNode.className += " flex items-center justify-center bg-zinc-800";
+                        e.target.parentNode.innerHTML += '<div class="text-center p-4"><p class="text-orange-500 font-bold">Image S&BOX.png manquante</p></div>';
                      }}
                    />
                    
-                   <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-900/20 to-black/40 pointer-events-none">
-                      {/* Pas d'icône centrale pour laisser voir l'image */}
-                   </div>
-
                    <div className="absolute bottom-4 left-4 right-4 bg-black/80 p-4 border-l-4 border-blue-500 backdrop-blur-sm">
                       <p className="text-white font-bold uppercase tracking-widest text-xs">Sandbox & Level Design</p>
                    </div>
@@ -58,34 +54,36 @@ const Jeu = ({ isDarkMode }) => {
                       <Hammer size={14} /> Source 2 Engine
                     </span>
                     <span className="flex items-center gap-2 text-gray-400">
-                      <Code size={14} /> C# & Lua
+                      <Code size={14} /> C#
                     </span>
                   </div>
 
+                  {/* TITRE MODIFIÉ */}
                   <h2 className={`text-3xl font-bold mb-4 uppercase title-section ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-                    S&box (Facepunch)
+                    Retry
                   </h2>
                   <h3 className="text-blue-500 font-bold mb-6 text-sm uppercase tracking-wide">
-                    Création de modes de jeu & Mapping
+                    Projet de jeu développé sur S&box
                   </h3>
 
                   <div className={`space-y-6 leading-relaxed text-content text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    
+                    {/* CONTEXTE MODIFIÉ */}
                     <p>
-                      <strong>Contexte :</strong> Participation à la création de contenu pour <strong>S&box</strong>, le successeur spirituel de Garry's Mod développé par Facepunch Studios. Exploration des capacités du moteur <strong>Source 2</strong>.
+                      <strong>Contexte :</strong> Développement de <strong>"Retry"</strong>, un projet interactif conçu intégralement au sein de la plateforme S&box (par Facepunch Studios). L'objectif était d'exploiter les outils du moteur Source 2 pour créer une expérience de jeu personnalisée.
                     </p>
 
                     <div className="border-l-2 border-orange-500/50 pl-4 space-y-2">
-                      <p className="font-bold text-orange-500">Compétences techniques :</p>
+                      <p className="font-bold text-orange-500">Mes réalisations sur ce projet :</p>
                       <ul className="list-disc pl-4 space-y-1">
-                        <li><strong>Level Design :</strong> Conception de cartes (maps) optimisées avec l'éditeur <strong>Hammer</strong>.</li>
-                        <li><strong>Scripting :</strong> Logique de jeu et interactions développées en C#.</li>
-                        <li><strong>Éclairage & Rendu :</strong> Gestion des lumières dynamiques et des ambiances (Lighting).</li>
-                        <li><strong>Optimisation :</strong> Gestion des ressources pour assurer la fluidité du moteur physique.</li>
+                        <li><strong>Level Design :</strong> Architecture et construction de la carte (map) via l'éditeur <strong>Hammer</strong>.</li>
+                        <li><strong>Game Logic (Scripting) :</strong> Programmation des mécaniques de jeu et de la boucle de gameplay en <strong>C#</strong>.</li>
+                        <li><strong>Intégration :</strong> Mise en place des assets, de l'éclairage dynamique et de la physique du moteur Source 2.</li>
                       </ul>
                     </div>
 
                     <div className="flex flex-wrap gap-2 pt-2">
-                      {["Source 2", "Hammer Editor", "C#", "Game Logic", "Lighting", "3D Environment"].map((tag, i) => (
+                      {["Source 2", "Hammer Editor", "C#", "Level Design", "Game Loop"].map((tag, i) => (
                         <span key={i} className={`px-3 py-1 text-xs border ${isDarkMode ? 'border-zinc-700 text-zinc-400' : 'border-gray-200 text-gray-500'}`}>
                           #{tag}
                         </span>
@@ -93,6 +91,7 @@ const Jeu = ({ isDarkMode }) => {
                     </div>
                   </div>
 
+                  {/* LIEN MODIFIÉ */}
                   <div className="mt-8">
                     <a 
                       href="https://sbox.facepunch.com/" 
@@ -100,11 +99,11 @@ const Jeu = ({ isDarkMode }) => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 uppercase tracking-widest text-xs transition-colors"
                     >
-                      <Boxes size={16} /> Voir le projet S&box
+                      <Boxes size={16} /> Site officiel de S&box
                       <ArrowRight size={16} />
                     </a>
                     <p className="mt-4 text-[10px] opacity-50 italic">
-                      * S&box et le logo S&box sont des marques déposées de Facepunch Studios Ltd. Projet réalisé à but non lucratif / éducatif.
+                      * Projet "Retry" conçu sur la plateforme S&box. S&box et le logo S&box sont des marques déposées de Facepunch Studios Ltd.
                     </p>
                   </div>
 
