@@ -24,11 +24,81 @@ const Communication = ({ isDarkMode }) => {
 
         <div className="space-y-16"> {/* CONTENEUR DES PROJETS */}
 
-            {/* --- PROJET 1 : ECO-TASTY --- */}
+            {/* --- PROJET 1 : THE LAST DROP (NOUVEAU) --- */}
             <div className={`border-2 border-orange-500/30 overflow-hidden transition-all hover:border-orange-500 ${isDarkMode ? 'bg-zinc-900' : 'bg-white'}`}>
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 
-                {/* VISUEL (Nettoyé : Image seule) */}
+                {/* VISUEL : VIDÉO YOUTUBE */}
+                <div className="bg-zinc-800 min-h-[300px] relative group flex items-center justify-center border-b lg:border-b-0 lg:border-r border-orange-500/30">
+                   <iframe 
+                     className="w-full h-full aspect-video"
+                     src="https://www.youtube.com/embed/wt8ckrZ3F7A" 
+                     title="The Last Drop - Campagne Vidéo" 
+                     frameBorder="0" 
+                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                     allowFullScreen
+                   ></iframe>
+                </div>
+
+                {/* CONTENU */}
+                <div className="p-8 md:p-10 flex flex-col justify-center">
+                  <div className="flex flex-wrap gap-4 mb-6 text-xs font-bold uppercase tracking-widest">
+                    <span className="flex items-center gap-2 text-orange-500">
+                      <Calendar size={14} /> 2024 (SAE 302)
+                    </span>
+                    <span className="flex items-center gap-2 text-blue-400">
+                      <Users size={14} /> Projet de Groupe
+                    </span>
+                  </div>
+
+                  <h2 className={`text-3xl font-bold mb-4 uppercase title-section ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                    The Last Drop (O.N.G.)
+                  </h2>
+                  <h3 className="text-blue-500 font-bold mb-6 text-sm uppercase tracking-wide">
+                    Prévention & Stratégie Digitale
+                  </h3>
+
+                  <div className={`space-y-6 leading-relaxed text-content text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                    <p>
+                      <strong>Contexte :</strong> Création de la stratégie de communication numérique d'une ONG fictive luttant contre la banalisation de l'alcool. Notre but : accompagner sans culpabiliser et changer les mentalités en brisant les stéréotypes.
+                    </p>
+                    <div className="border-l-2 border-orange-500/50 pl-4 space-y-2">
+                      <p className="font-bold text-orange-500">Mes réalisations sur le projet :</p>
+                      <ul className="list-disc pl-4 space-y-1">
+                        <li><strong>UI/UX Design :</strong> Maquettage complet sur Figma d'un site web aux couleurs rassurantes avec une navigation orientée sur l'aide et l'écoute.</li>
+                        <li><strong>Campagne Vidéo :</strong> Réalisation de courts-métrages mettant en scène des profils à succès (Prix Nobel, Champions) fiers de leur abstinence.</li>
+                        <li><strong>Social Media :</strong> Stratégie de contenu ("Dire non, c’est déjà une victoire") et annonce du podcast <em>The Limpid Drop</em>.</li>
+                      </ul>
+                    </div>
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {["UI/UX Design", "Figma", "Stratégie Digitale", "Montage Vidéo", "Direction Artistique"].map((tag, i) => (
+                        <span key={i} className={`px-3 py-1 text-xs border ${isDarkMode ? 'border-zinc-700 text-zinc-400' : 'border-gray-200 text-gray-500'}`}>
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="mt-8 flex flex-wrap gap-4">
+                    <a 
+                      href="https://www.figma.com/proto/Y5zB2ESwqNzINVZuGG2pXq/Maquette---Wireframe?node-id=1-3&t=aUXrpMKzAguzAcQj-1" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-black font-bold py-3 px-6 uppercase tracking-widest text-xs transition-colors"
+                    >
+                      <Figma size={16} /> Maquettes Figma
+                      <ArrowRight size={16} />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* --- PROJET 2 : ECO-TASTY --- */}
+            <div className={`border-2 border-orange-500/30 overflow-hidden transition-all hover:border-orange-500 ${isDarkMode ? 'bg-zinc-900' : 'bg-white'}`}>
+              <div className="grid grid-cols-1 lg:grid-cols-2">
+                
+                {/* VISUEL */}
                 <div className="bg-zinc-800 min-h-[300px] relative overflow-hidden group">
                    <img 
                      src="/images/Eco.webp" 
@@ -36,7 +106,6 @@ const Communication = ({ isDarkMode }) => {
                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                      onError={(e) => {
                        e.target.style.display = 'none';
-                       // Petit fallback si l'image plante
                        e.target.parentNode.style.backgroundColor = '#18181b';
                        e.target.parentNode.innerHTML += '<div class="absolute inset-0 flex items-center justify-center text-gray-500">Image non trouvée</div>';
                      }} 
@@ -103,7 +172,7 @@ const Communication = ({ isDarkMode }) => {
               </div>
             </div>
 
-            {/* --- PROJET 2 : INTERVIEW JESS ANDERSON --- */}
+            {/* --- PROJET 3 : INTERVIEW JESS ANDERSON --- */}
             <div className={`border-2 border-orange-500/30 overflow-hidden transition-all hover:border-orange-500 ${isDarkMode ? 'bg-zinc-900' : 'bg-white'}`}>
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 
