@@ -11,6 +11,14 @@ const Header = ({ isDarkMode, toggleTheme, scrolled }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Liste des projets pour le menu déroulant
+  const projectLinks = [
+    { name: 'Graphique', path: '/graphique' },
+    { name: 'Communication', path: '/communication' },
+    { name: 'Jeu', path: '/jeu' },
+    { name: 'Développement', path: '/developpement' } // <-- NOUVEAU LIEN ICI
+  ];
+
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
@@ -52,28 +60,28 @@ const Header = ({ isDarkMode, toggleTheme, scrolled }) => {
               <span className="hidden sm:inline">Projets</span>
             </button>
 
-            {/* Dropdown Menu */}
+            {/* Dropdown Menu MIS À JOUR */}
             {menuOpen && (
               <div className={`absolute top-full right-0 mt-2 w-48 border-2 border-orange-500/50 shadow-xl ${
                 isDarkMode ? 'bg-zinc-900' : 'bg-gray-50'
               }`}>
-                {['Graphique', 'Communication', 'Jeu'].map((item) => (
+                {projectLinks.map((item) => (
                   <Link
-                    key={item}
-                    to={`/${item.toLowerCase()}`}
+                    key={item.name}
+                    to={item.path}
                     onClick={handleNavClick}
                     className={`block px-4 py-3 text-sm uppercase tracking-wide border-b last:border-0 hover:text-orange-500 transition-colors ${
                       isDarkMode ? 'text-gray-300 border-orange-500/20 hover:bg-orange-500/10' : 'text-gray-700 border-orange-500/20 hover:bg-orange-500/10'
                     }`}
                   >
-                    {item}
+                    {item.name}
                   </Link>
                 ))}
               </div>
             )}
           </div>
 
-          {/* NOUVEAU : Onglet Contact */}
+          {/* Onglet Contact */}
           <a
             href="/#contact"
             className={`flex items-center gap-1 sm:gap-2 uppercase tracking-widest text-xs sm:text-sm border px-2 sm:px-4 py-2 transition-colors ${
@@ -100,7 +108,7 @@ const Header = ({ isDarkMode, toggleTheme, scrolled }) => {
             <span className="hidden sm:inline">CV</span>
           </a>
 
-          {/* NOUVEAU : Logo LinkedIn (Bouton Carré) */}
+          {/* Logo LinkedIn */}
           <a
             href="https://www.linkedin.com/in/azad-oztopal/"
             target="_blank"

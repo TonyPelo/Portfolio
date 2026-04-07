@@ -7,7 +7,8 @@ import Home from './pages/Home';
 import Graphique from './pages/Graphique';
 import Communication from './pages/Communication';
 import Jeu from './pages/Jeu';
-import Mentions from './pages/Mentions'; // 1. IMPORT AJOUTÉ
+import Mentions from './pages/Mentions';
+import Developpement from './pages/Developpement'; // <-- 1. IMPORT AJOUTÉ ICI
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -58,7 +59,8 @@ const App = () => {
             <Route path="/graphique" element={<Graphique isDarkMode={isDarkMode} />} />
             <Route path="/communication" element={<Communication isDarkMode={isDarkMode} />} />
             <Route path="/jeu" element={<Jeu isDarkMode={isDarkMode} />} />
-            <Route path="/mentions" element={<Mentions isDarkMode={isDarkMode} />} /> {/* 2. ROUTE AJOUTÉE */}
+            <Route path="/developpement" element={<Developpement isDarkMode={isDarkMode} />} /> {/* <-- 2. ROUTE AJOUTÉE ICI */}
+            <Route path="/mentions" element={<Mentions isDarkMode={isDarkMode} />} />
           </Routes>
         </main>
 
