@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Mail, Phone, Linkedin, Palette, Gamepad2, Megaphone, ArrowRight, CheckCircle, AlertCircle } from 'lucide-react';
+// Ajout de l'icône Code pour la section Dev
+import { Mail, Phone, Linkedin, Palette, Gamepad2, Megaphone, Code, ArrowRight, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 const Home = ({ isDarkMode }) => {
@@ -22,14 +23,16 @@ const Home = ({ isDarkMode }) => {
     { name: 'React', img: '/logos/React.png' },
     { name: 'Photoshop', img: '/logos/Photoshop.png' },
     { name: 'Illustrator', img: '/logos/illustrator.png' },
-    { name: 'C#', img: '/logos/C.png' }, // Vérifie bien si ton fichier s'appelle C.png ou C#.png
+    { name: 'C#', img: '/logos/C.png' },
     { name: 'MariaDB', img: '/logos/MariaDB.png' }, 
   ];
 
+  // --- DOMAINES D'EXPERTISE (Ajout du Dev) ---
   const categories = [
     { title: "Graphique", icon: <Palette size={40} />, path: "/graphique", desc: "Identité visuelle, UI Design & Print" },
     { title: "Jeu Vidéo", icon: <Gamepad2 size={40} />, path: "/jeu", desc: "Game Design, Level Design & Source 2" },
-    { title: "Communication", icon: <Megaphone size={40} />, path: "/communication", desc: "Stratégie digitale & Création de contenu" }
+    { title: "Communication", icon: <Megaphone size={40} />, path: "/communication", desc: "Stratégie digitale & Création de contenu" },
+    { title: "Développement", icon: <Code size={40} />, path: "/dev", desc: "Front-end, React & Intégration Web" }
   ];
 
   // --- SCROLL VERS CONTACT ---
@@ -86,7 +89,6 @@ const Home = ({ isDarkMode }) => {
                 alt="Portrait Azad" 
                 className="w-full h-full object-cover"
                 onError={(e) => {
-                  // Si l'image ne charge pas, on remet l'émoji en secours
                   e.target.style.display = 'none';
                   e.target.parentNode.innerHTML = '<div class="text-6xl">👤</div>';
                 }}
@@ -115,7 +117,7 @@ const Home = ({ isDarkMode }) => {
           <div className={`absolute -top-3 left-4 sm:left-8 px-3 py-1 border border-orange-500 text-orange-500 text-xs uppercase tracking-widest ${isDarkMode ? 'bg-black' : 'bg-gray-100'}`}>Présentation</div>
           
           <h2 className={`text-2xl sm:text-3xl font-bold mb-4 mt-2 ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
-             Designer d'Expérience & Développeur Front-End
+              Designer d'Expérience & Développeur Front-End
           </h2>
           
           <div className={`leading-relaxed mb-4 text-sm sm:text-base text-content ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
@@ -136,7 +138,7 @@ const Home = ({ isDarkMode }) => {
             </p>
             
             <p className="font-bold text-orange-500 uppercase tracking-wide">
-               ⚡ Recherche de stage : Avril à Juin 2026.
+                ⚡ Recherche de stage : Avril à Juin 2026.
             </p>
           </div>
         </div>
@@ -145,7 +147,8 @@ const Home = ({ isDarkMode }) => {
       {/* SECTION DOMAINES D'EXPERTISE */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
          <h3 className="text-orange-500 uppercase tracking-widest text-sm border-l-4 border-orange-500 pl-4 mb-8">Domaines d'expertise</h3>
-         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+         {/* Grille ajustée pour 4 éléments : passe de 1 colonne (mobile) à 2 (tablette) à 4 (desktop) */}
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((cat, index) => (
               <div key={index} onClick={() => navigate(cat.path)} className={`group border-2 border-orange-500/30 p-8 cursor-pointer transition-all hover:border-orange-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/10 relative overflow-hidden ${isDarkMode ? 'bg-zinc-900' : 'bg-gray-50'}`}>
                  <div className="absolute inset-0 bg-orange-500/0 group-hover:bg-orange-500/5 transition-colors duration-300"></div>
