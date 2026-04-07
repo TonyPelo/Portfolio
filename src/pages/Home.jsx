@@ -32,7 +32,7 @@ const Home = ({ isDarkMode }) => {
     { title: "Graphique", icon: <Palette size={40} />, path: "/graphique", desc: "Identité visuelle, UI Design & Print" },
     { title: "Jeu Vidéo", icon: <Gamepad2 size={40} />, path: "/jeu", desc: "Game Design, Level Design & Source 2" },
     { title: "Communication", icon: <Megaphone size={40} />, path: "/communication", desc: "Stratégie digitale & Création de contenu" },
-    { title: "Développement", icon: <Code size={40} />, path: "/dev", desc: "Front-end, React & Intégration Web" }
+    { title: "Développement", icon: <Code size={40} />, path: "/developpement", desc: "Front-end, React & Intégration Web" }
   ];
 
   // --- SCROLL VERS CONTACT ---
