@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Code2, Server, Database, ShoppingCart, Search, ArrowRight } from 'lucide-react';
+import { Code2, Server, Database, ShoppingCart, ArrowRight } from 'lucide-react';
 
 const Developpement = ({ isDarkMode }) => {
   
@@ -18,7 +18,7 @@ const Developpement = ({ isDarkMode }) => {
             DÉVELOPPEMENT WEB
           </h1>
           <p className="text-lg max-w-2xl mx-auto leading-relaxed text-content">
-            Création d'applications web sur-mesure, architecture back-end et optimisation SEO technique.
+            Création d&apos;applications web sur-mesure, architecture back-end et optimisation SEO technique.
           </p>
         </div>
 
@@ -63,21 +63,21 @@ const Developpement = ({ isDarkMode }) => {
                     Figura
                   </h2>
                   <h3 className="text-orange-500 font-bold mb-6 text-sm uppercase tracking-wide">
-                    Plateforme E-commerce Premium "From Scratch"
+                    Plateforme E-commerce Premium &quot;From Scratch&quot;
                   </h3>
 
                   <div className={`space-y-6 leading-relaxed text-content text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                     
                     <p>
-                      <strong>Contexte :</strong> Conception et développement intégral d'une boutique en ligne sur-mesure ciblant des acheteurs de produits de luxe (paniers moyens > 300€). L'objectif était de maîtriser toute la chaîne technique, du serveur à l'interface utilisateur.
+                      <strong>Contexte :</strong> Conception et développement intégral d&apos;une boutique en ligne sur-mesure ciblant des acheteurs de produits de luxe (paniers moyens &gt; 300€). L&apos;objectif était de maîtriser toute la chaîne technique, du serveur à l&apos;interface utilisateur.
                     </p>
 
                     <div className="border-l-2 border-orange-500/50 pl-4 space-y-2">
                       <p className="font-bold text-orange-500">Mes réalisations techniques :</p>
                       <ul className="list-disc pl-4 space-y-1">
-                        <li><strong>Architecture Full-Stack :</strong> Développement de l'interface (HTML5/CSS3/JS) et de la logique serveur en <strong>PHP</strong>.</li>
+                        <li><strong>Architecture Full-Stack :</strong> Développement de l&apos;interface (HTML5/CSS3/JS) et de la logique serveur en <strong>PHP</strong>.</li>
                         <li><strong>Base de données :</strong> Modélisation et requêtes <strong>SQL</strong> pour la gestion dynamique du catalogue, des stocks et des sessions sécurisées.</li>
-                        <li><strong>Optimisation CRO :</strong> Programmation d'un tunnel d'achat "sans friction" permettant de commander en moins de 3 minutes.</li>
+                        <li><strong>Optimisation CRO :</strong> Programmation d&apos;un tunnel d&apos;achat &quot;sans friction&quot; permettant de commander en moins de 3 minutes.</li>
                         <li><strong>SEO Technique :</strong> Intégration du référencement au cœur du code (hiérarchie sémantique, balisage des médias, longue traîne).</li>
                       </ul>
                     </div>
