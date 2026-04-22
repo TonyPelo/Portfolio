@@ -8,12 +8,13 @@ import Graphique from './pages/Graphique';
 import Communication from './pages/Communication';
 import Jeu from './pages/Jeu';
 import Mentions from './pages/Mentions';
-import Developpement from './pages/Developpement'; // <-- 1. IMPORT AJOUTÉ ICI
+import Developpement from './pages/Developpement'; 
 
 const App = () => {
+  // C'est ici que j'ai remplacé "true" par "false"
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedTheme = localStorage.getItem('theme');
-    return savedTheme !== null ? JSON.parse(savedTheme) : true;
+    return savedTheme !== null ? JSON.parse(savedTheme) : false;
   });
 
   const [scrolled, setScrolled] = useState(false);
@@ -59,7 +60,7 @@ const App = () => {
             <Route path="/graphique" element={<Graphique isDarkMode={isDarkMode} />} />
             <Route path="/communication" element={<Communication isDarkMode={isDarkMode} />} />
             <Route path="/jeu" element={<Jeu isDarkMode={isDarkMode} />} />
-            <Route path="/developpement" element={<Developpement isDarkMode={isDarkMode} />} /> {/* <-- 2. ROUTE AJOUTÉE ICI */}
+            <Route path="/developpement" element={<Developpement isDarkMode={isDarkMode} />} />
             <Route path="/mentions" element={<Mentions isDarkMode={isDarkMode} />} />
           </Routes>
         </main>
