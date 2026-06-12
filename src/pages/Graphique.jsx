@@ -71,7 +71,7 @@ const Graphique = ({ isDarkMode }) => {
               <div className={`space-y-6 leading-relaxed text-content text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
                 
                 <p>
-                  <strong>Contexte :</strong> Dans le cadre du module de Création Numérique, analyse graphique et reproduction fidèle de l'affiche de l'exposition "L'espace urbain en URSS" (Centre Pompidou, 1978) réalisée par le graphiste Roman Cieslewicz.
+                  <strong>Contexte :</strong> Dans le cadre du module de Création Numérique, nous avons dû refaire à l'identique une affiche parmi une dizaine proposées par notre professeur. J'ai choisi l'affiche de l'exposition "L'espace urbain en URSS" (Centre Pompidou, 1978) du graphiste Roman Cieslewicz.
                 </p>
 
                 {/* Liste des tâches avec vocabulaire technique (Illustrator) */}
