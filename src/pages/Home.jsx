@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-// Ajout de l'icône Code pour la section Dev
 import { Mail, Phone, Linkedin, Palette, Gamepad2, Megaphone, Code, ArrowRight, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
@@ -27,7 +26,7 @@ const Home = ({ isDarkMode }) => {
     { name: 'MariaDB', img: '/logos/MariaDB.png' }, 
   ];
 
-  // --- DOMAINES D'EXPERTISE (Ajout du Dev) ---
+  // --- DOMAINES D'EXPERTISE ---
   const categories = [
     { title: "Graphique", icon: <Palette size={40} />, path: "/graphique", desc: "Identité visuelle, UI Design & Print" },
     { title: "Jeu Vidéo", icon: <Gamepad2 size={40} />, path: "/jeu", desc: "Game Design, Level Design & Source 2" },
@@ -100,12 +99,13 @@ const Home = ({ isDarkMode }) => {
 
           <div className="max-w-md">
             <h3 className="text-orange-500 uppercase tracking-widest text-xs border-l-4 border-orange-500 pl-3 mb-3 title-section">Projet Phare</h3>
-            <div onClick={() => navigate('/jeu')} className={`border-2 border-orange-500/30 overflow-hidden hover:border-orange-500 transition-all hover:shadow-xl hover:shadow-orange-500/20 group cursor-pointer ${isDarkMode ? 'bg-zinc-900' : 'bg-gray-50'}`}>
-              <div className={`h-32 bg-gradient-to-br flex items-center justify-center text-5xl border-b-2 border-orange-500/30 group-hover:border-orange-500 transition-colors ${isDarkMode ? 'from-orange-500/20 to-black' : 'from-orange-500/20 to-gray-100'}`}>🎮</div>
+            {/* MODIFICATION ICI : STAGE L'OPTICIENNE DE ROMAINVILLE */}
+            <div onClick={() => navigate('/communication')} className={`border-2 border-orange-500/30 overflow-hidden hover:border-orange-500 transition-all hover:shadow-xl hover:shadow-orange-500/20 group cursor-pointer ${isDarkMode ? 'bg-zinc-900' : 'bg-gray-50'}`}>
+              <div className={`h-32 bg-gradient-to-br flex items-center justify-center text-5xl border-b-2 border-orange-500/30 group-hover:border-orange-500 transition-colors ${isDarkMode ? 'from-orange-500/20 to-black' : 'from-orange-500/20 to-gray-100'}`}>👓</div>
               <div className="p-4">
-                <div className="flex items-center gap-2 mb-2"><div className="w-2 h-2 bg-orange-500 animate-pulse"></div><span className="text-orange-500 uppercase text-xs tracking-widest">Jeu</span></div>
-                <h4 className={`text-base font-bold mb-2 uppercase ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>Game Design</h4>
-                <p className={`text-xs mb-3 text-content leading-relaxed ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Conception de jeux interactifs.</p>
+                <div className="flex items-center gap-2 mb-2"><div className="w-2 h-2 bg-orange-500 animate-pulse"></div><span className="text-orange-500 uppercase text-xs tracking-widest">Stage</span></div>
+                <h4 className={`text-base font-bold mb-2 uppercase ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>L'Opticienne de Romainville</h4>
+                <p className={`text-xs mb-3 text-content leading-relaxed ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>Site WordPress & Création de contenus Instagram.</p>
               </div>
             </div>
           </div>
@@ -137,8 +137,9 @@ const Home = ({ isDarkMode }) => {
               Mon approche allie esthétique industrielle et fonctionnalité moderne. Spécialisé dans la communication visuelle, le développement front-end et le game design, j'apporte une vision créative et technique à chaque projet.
             </p>
             
+            {/* MODIFICATION ICI : RECHERCHE ALTERNANCE */}
             <p className="font-bold text-orange-500 uppercase tracking-wide">
-                ⚡ Recherche de stage : Avril à Juin 2026.
+                ⚡ Recherche d'alternance : Septembre prochain.
             </p>
           </div>
         </div>
@@ -147,7 +148,6 @@ const Home = ({ isDarkMode }) => {
       {/* SECTION DOMAINES D'EXPERTISE */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16">
          <h3 className="text-orange-500 uppercase tracking-widest text-sm border-l-4 border-orange-500 pl-4 mb-8">Domaines d'expertise</h3>
-         {/* Grille ajustée pour 4 éléments : passe de 1 colonne (mobile) à 2 (tablette) à 4 (desktop) */}
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {categories.map((cat, index) => (
               <div key={index} onClick={() => navigate(cat.path)} className={`group border-2 border-orange-500/30 p-8 cursor-pointer transition-all hover:border-orange-500 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-500/10 relative overflow-hidden ${isDarkMode ? 'bg-zinc-900' : 'bg-gray-50'}`}>
