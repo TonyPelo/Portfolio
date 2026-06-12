@@ -1,9 +1,12 @@
-import React, { useEffect } from 'react';
-import { ArrowLeft, ArrowRight, Globe, Instagram, Calendar, MapPin, MonitorSmartphone, Palette } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowLeft, ArrowRight, Globe, Instagram, Calendar, MapPin, MonitorSmartphone, Palette, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Stage = ({ isDarkMode }) => {
   const navigate = useNavigate();
+  
+  // État pour gérer l'image affichée en grand
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -58,6 +61,7 @@ const Stage = ({ isDarkMode }) => {
                 <ul className="list-disc pl-4 space-y-2 mt-4 text-orange-500/80 font-bold">
                   <li><span className={isDarkMode ? 'text-gray-300 font-normal' : 'text-gray-700 font-normal'}>Mise en place de l'hébergement et configuration du CMS WordPress.</span></li>
                   <li><span className={isDarkMode ? 'text-gray-300 font-normal' : 'text-gray-700 font-normal'}>Design et intégration des pages via le constructeur Elementor.</span></li>
+                  <li><span className={isDarkMode ? 'text-gray-300 font-normal' : 'text-gray-700 font-normal'}>Implémentation d'un système de messagerie et de prise de rendez-vous (RDV).</span></li>
                   <li><span className={isDarkMode ? 'text-gray-300 font-normal' : 'text-gray-700 font-normal'}>Optimisation SEO et responsive design (Mobile/Desktop).</span></li>
                 </ul>
               </div>
@@ -74,7 +78,7 @@ const Stage = ({ isDarkMode }) => {
               </div>
             </div>
             
-            {/* Visuel illustratif du site (Tu pourras mettre une capture d'écran du site plus tard si tu veux) */}
+            {/* Visuel illustratif du site */}
             <div className="bg-zinc-800 min-h-[300px] relative flex items-center justify-center p-8">
               <div className="text-center">
                 <Globe size={64} className="mx-auto text-orange-500/50 mb-4" />
@@ -97,26 +101,35 @@ const Stage = ({ isDarkMode }) => {
           </h3>
           
           <p className={`mb-10 max-w-3xl leading-relaxed text-content text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-            Pour dynamiser la communication digitale de la boutique, j'ai conçu plusieurs séries de visuels pour Instagram. L'enjeu était de mettre en valeur les modèles phares (Andybrook, Prada, Ray-Ban) avec une identité visuelle élégante et cohérente.
+            Pour dynamiser la communication digitale de la boutique, j'ai conçu plusieurs séries de visuels pour Instagram. L'enjeu était de mettre en valeur les modèles phares (Andybrook, Prada, Ray-Ban) avec une identité visuelle élégante et cohérente. Cliquez sur les images pour les agrandir.
           </p>
 
           {/* GRILLE DES 3 AFFICHES */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="group relative overflow-hidden border border-orange-500/20 shadow-lg">
+            <div 
+              className="group relative overflow-hidden border border-orange-500/20 shadow-lg cursor-pointer"
+              onClick={() => setSelectedImage('/images/ANDYBROOK.webp')}
+            >
               <img src="/images/ANDYBROOK.webp" alt="Post Instagram Andybrook" className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute bottom-0 left-0 w-full bg-black/80 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                 <p className="text-orange-500 font-bold text-xs uppercase text-center flex items-center justify-center gap-2"><Instagram size={14}/> Andybrook</p>
               </div>
             </div>
             
-            <div className="group relative overflow-hidden border border-orange-500/20 shadow-lg">
+            <div 
+              className="group relative overflow-hidden border border-orange-500/20 shadow-lg cursor-pointer"
+              onClick={() => setSelectedImage('/images/PRADA.webp')}
+            >
               <img src="/images/PRADA.webp" alt="Post Instagram Prada" className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute bottom-0 left-0 w-full bg-black/80 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                 <p className="text-orange-500 font-bold text-xs uppercase text-center flex items-center justify-center gap-2"><Instagram size={14}/> Prada</p>
               </div>
             </div>
 
-            <div className="group relative overflow-hidden border border-orange-500/20 shadow-lg">
+            <div 
+              className="group relative overflow-hidden border border-orange-500/20 shadow-lg cursor-pointer"
+              onClick={() => setSelectedImage('/images/RAYBAN.webp')}
+            >
               <img src="/images/RAYBAN.webp" alt="Post Instagram Ray-Ban" className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute bottom-0 left-0 w-full bg-black/80 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                 <p className="text-orange-500 font-bold text-xs uppercase text-center flex items-center justify-center gap-2"><Instagram size={14}/> Ray-Ban</p>
@@ -127,6 +140,27 @@ const Stage = ({ isDarkMode }) => {
         </section>
 
       </div>
+
+      {/* MODALE POUR AFFICHER L'IMAGE EN GRAND */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 animate-in fade-in duration-200"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button 
+            className="absolute top-6 right-6 sm:top-10 sm:right-10 text-white hover:text-orange-500 transition-colors"
+            onClick={() => setSelectedImage(null)}
+          >
+            <X size={32} />
+          </button>
+          <img 
+            src={selectedImage} 
+            alt="Vue agrandie" 
+            className="max-w-full max-h-[90vh] object-contain rounded shadow-2xl border-2 border-orange-500/30"
+            onClick={(e) => e.stopPropagation()} 
+          />
+        </div>
+      )}
     </div>
   );
 };
