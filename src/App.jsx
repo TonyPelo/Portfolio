@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ArrowLeft, Globe, Instagram, Calendar, MapPin, MonitorSmartphone, Palette } from 'lucide-react';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
