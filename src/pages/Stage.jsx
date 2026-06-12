@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ArrowLeft, Globe, Instagram, Calendar, MapPin, MonitorSmartphone, Palette } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Globe, Instagram, Calendar, MapPin, MonitorSmartphone, Palette } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Stage = ({ isDarkMode }) => {
