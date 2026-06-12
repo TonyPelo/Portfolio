@@ -1,0 +1,134 @@
+import React, { useEffect } from 'react';
+import { ArrowLeft, Globe, Instagram, Calendar, MapPin, MonitorSmartphone, Palette } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+
+const Stage = ({ isDarkMode }) => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <div className={`animate-in fade-in duration-500 min-h-screen pt-24 pb-12 transition-colors duration-300 ${isDarkMode ? 'bg-black text-gray-300' : 'bg-gray-100 text-gray-800'}`}>
+      
+      {/* BOUTON RETOUR */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-8">
+        <button 
+          onClick={() => navigate('/')}
+          className={`flex items-center gap-2 text-sm font-bold uppercase tracking-widest transition-colors hover:text-orange-500 ${isDarkMode ? 'text-gray-400' : 'text-gray-500'}`}
+        >
+          <ArrowLeft size={16} /> Retour à l'accueil
+        </button>
+      </div>
+
+      {/* EN-TÊTE DE LA PAGE */}
+      <header className="max-w-6xl mx-auto px-4 sm:px-6 mb-16 text-center">
+        <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-orange-500 text-orange-500 text-xs uppercase tracking-widest bg-orange-500/10 rounded-full">
+          <Calendar size={14} /> Stage de fin d'études • 2025
+        </div>
+        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-orange-500 title-main">
+          L'OPTICIENNE DE ROMAINVILLE
+        </h1>
+        <p className="text-lg max-w-2xl mx-auto leading-relaxed text-content flex items-center justify-center gap-2">
+          <MapPin size={18} className="text-orange-500" /> Romainville, France
+        </p>
+      </header>
+
+      {/* CONTENU PRINCIPAL */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 space-y-16">
+
+        {/* SECTION 1 : LE SITE WEB */}
+        <section className={`border-2 border-orange-500/30 overflow-hidden ${isDarkMode ? 'bg-zinc-900' : 'bg-white'}`}>
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+            <div className="p-8 md:p-10 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-orange-500/30">
+              <div className="flex items-center gap-3 mb-4 text-orange-500">
+                <MonitorSmartphone size={32} />
+                <h2 className={`text-2xl font-bold uppercase title-section ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+                  Développement Web
+                </h2>
+              </div>
+              <h3 className="text-blue-500 font-bold mb-6 text-sm uppercase tracking-wide">
+                CMS WordPress & Elementor
+              </h3>
+              <div className={`space-y-4 leading-relaxed text-content text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                <p>
+                  Conception et développement complet du site vitrine de la boutique. L'objectif était de créer une plateforme moderne, fluide et responsive pour mettre en valeur les services et les collections de l'opticienne.
+                </p>
+                <ul className="list-disc pl-4 space-y-2 mt-4 text-orange-500/80 font-bold">
+                  <li><span className={isDarkMode ? 'text-gray-300 font-normal' : 'text-gray-700 font-normal'}>Mise en place de l'hébergement et configuration du CMS WordPress.</span></li>
+                  <li><span className={isDarkMode ? 'text-gray-300 font-normal' : 'text-gray-700 font-normal'}>Design et intégration des pages via le constructeur Elementor.</span></li>
+                  <li><span className={isDarkMode ? 'text-gray-300 font-normal' : 'text-gray-700 font-normal'}>Optimisation SEO et responsive design (Mobile/Desktop).</span></li>
+                </ul>
+              </div>
+              <div className="mt-8">
+                <a 
+                  href="https://opticienne-romainville.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-black font-bold py-3 px-6 uppercase tracking-widest text-xs transition-colors"
+                >
+                  <Globe size={16} /> Visiter le site web
+                  <ArrowRight size={16} />
+                </a>
+              </div>
+            </div>
+            
+            {/* Visuel illustratif du site (Tu pourras mettre une capture d'écran du site plus tard si tu veux) */}
+            <div className="bg-zinc-800 min-h-[300px] relative flex items-center justify-center p-8">
+              <div className="text-center">
+                <Globe size={64} className="mx-auto text-orange-500/50 mb-4" />
+                <p className="font-mono text-orange-500/70">opticienne-romainville.com</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 2 : CRÉATION DE CONTENU INSTAGRAM */}
+        <section className={`border-2 border-orange-500/30 p-8 md:p-10 ${isDarkMode ? 'bg-zinc-900' : 'bg-white'}`}>
+          <div className="flex items-center gap-3 mb-4 text-orange-500">
+            <Palette size={32} />
+            <h2 className={`text-2xl font-bold uppercase title-section ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+              Création de Contenus & Social Media
+            </h2>
+          </div>
+          <h3 className="text-purple-500 font-bold mb-8 text-sm uppercase tracking-wide">
+            Direction Artistique Instagram
+          </h3>
+          
+          <p className={`mb-10 max-w-3xl leading-relaxed text-content text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+            Pour dynamiser la communication digitale de la boutique, j'ai conçu plusieurs séries de visuels pour Instagram. L'enjeu était de mettre en valeur les modèles phares (Andybrook, Prada, Ray-Ban) avec une identité visuelle élégante et cohérente.
+          </p>
+
+          {/* GRILLE DES 3 AFFICHES */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="group relative overflow-hidden border border-orange-500/20 shadow-lg">
+              <img src="/images/ANDYBROOK.webp" alt="Post Instagram Andybrook" className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div className="absolute bottom-0 left-0 w-full bg-black/80 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <p className="text-orange-500 font-bold text-xs uppercase text-center flex items-center justify-center gap-2"><Instagram size={14}/> Andybrook</p>
+              </div>
+            </div>
+            
+            <div className="group relative overflow-hidden border border-orange-500/20 shadow-lg">
+              <img src="/images/PRADA.webp" alt="Post Instagram Prada" className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div className="absolute bottom-0 left-0 w-full bg-black/80 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <p className="text-orange-500 font-bold text-xs uppercase text-center flex items-center justify-center gap-2"><Instagram size={14}/> Prada</p>
+              </div>
+            </div>
+
+            <div className="group relative overflow-hidden border border-orange-500/20 shadow-lg">
+              <img src="/images/RAYBAN.webp" alt="Post Instagram Ray-Ban" className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div className="absolute bottom-0 left-0 w-full bg-black/80 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <p className="text-orange-500 font-bold text-xs uppercase text-center flex items-center justify-center gap-2"><Instagram size={14}/> Ray-Ban</p>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+      </div>
+    </div>
+  );
+};
+
+export default Stage;

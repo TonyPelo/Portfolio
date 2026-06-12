@@ -9,6 +9,7 @@ import Communication from './pages/Communication';
 import Jeu from './pages/Jeu';
 import Mentions from './pages/Mentions';
 import Developpement from './pages/Developpement'; 
+import Stage from './pages/Stage';
 
 const App = () => {
   // C'est ici que j'ai remplacé "true" par "false"
@@ -62,6 +63,7 @@ const App = () => {
             <Route path="/jeu" element={<Jeu isDarkMode={isDarkMode} />} />
             <Route path="/developpement" element={<Developpement isDarkMode={isDarkMode} />} />
             <Route path="/mentions" element={<Mentions isDarkMode={isDarkMode} />} />
+            <Route path="/stage" element={<Stage isDarkMode={isDarkMode} />} />
           </Routes>
         </main>
 
