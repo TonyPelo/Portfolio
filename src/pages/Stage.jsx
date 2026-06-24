@@ -101,11 +101,11 @@ const Stage = ({ isDarkMode }) => {
           </h3>
           
           <p className={`mb-10 max-w-3xl leading-relaxed text-content text-sm ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
-            Pour dynamiser la communication digitale de la boutique, j'ai conçu plusieurs séries de visuels pour Instagram. L'enjeu était de mettre en valeur les modèles phares (Andybrook, Prada, Ray-Ban) avec une identité visuelle élégante et cohérente. Cliquez sur les images pour les agrandir.
+            Pour dynamiser la communication digitale de la boutique, j'ai conçu plusieurs séries de visuels pour Instagram. L'enjeu était de mettre en valeur les modèles phares (Andybrook, Prada, Ray-Ban, Carrera) avec une identité visuelle élégante et cohérente. Cliquez sur les images pour les agrandir.
           </p>
 
-          {/* GRILLE DES 3 AFFICHES */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* GRILLE DES 4 AFFICHES */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div 
               className="group relative overflow-hidden border border-orange-500/20 shadow-lg cursor-pointer"
               onClick={() => setSelectedImage('/images/ANDYBROOK.webp')}
@@ -133,6 +133,17 @@ const Stage = ({ isDarkMode }) => {
               <img src="/images/RAYBAN.webp" alt="Post Instagram Ray-Ban" className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute bottom-0 left-0 w-full bg-black/80 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                 <p className="text-orange-500 font-bold text-xs uppercase text-center flex items-center justify-center gap-2"><Instagram size={14}/> Ray-Ban</p>
+              </div>
+            </div>
+
+            {/* NOUVELLE IMAGE : CARRERA */}
+            <div 
+              className="group relative overflow-hidden border border-orange-500/20 shadow-lg cursor-pointer"
+              onClick={() => setSelectedImage('/images/CARRERA.webp')}
+            >
+              <img src="/images/CARRERA.webp" alt="Post Instagram Carrera" className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div className="absolute bottom-0 left-0 w-full bg-black/80 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                <p className="text-orange-500 font-bold text-xs uppercase text-center flex items-center justify-center gap-2"><Instagram size={14}/> Carrera</p>
               </div>
             </div>
           </div>
