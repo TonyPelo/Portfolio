@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, ArrowRight, Globe, Instagram, Calendar, MapPin, MonitorSmartphone, Palette, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Globe, Instagram, Calendar, MapPin, MonitorSmartphone, Palette, X, Lightbulb, Users } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Stage = ({ isDarkMode }) => {
@@ -147,7 +147,50 @@ const Stage = ({ isDarkMode }) => {
               </div>
             </div>
           </div>
+        </section>
 
+        {/* SECTION 3 : BILAN ET COMPÉTENCES ACQUISES */}
+        <section className={`border-2 border-orange-500/30 p-8 md:p-10 ${isDarkMode ? 'bg-zinc-900' : 'bg-white'}`}>
+          <div className="flex items-center gap-3 mb-8 text-orange-500">
+            <Lightbulb size={32} />
+            <h2 className={`text-2xl font-bold uppercase title-section ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+              Ce que j'ai appris lors de ce stage
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            {/* Carte 1 */}
+            <div className={`p-6 border ${isDarkMode ? 'border-zinc-700 bg-zinc-800/50' : 'border-orange-500/10 bg-orange-500/5'}`}>
+              <h3 className="text-orange-500 font-bold mb-4 text-sm uppercase tracking-wide flex items-center gap-2">
+                <Palette size={18} /> Direction Artistique
+              </h3>
+              <p className={`text-sm leading-relaxed text-content ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                Pour la gestion des réseaux sociaux, mon rôle s'est concentré sur la direction artistique et la conception de contenus visuels haut de gamme. J'ai élaboré des campagnes digitales spécialement pensées pour Instagram afin de promouvoir les collections de lunettes de créateurs. En utilisant Figma de manière avancée, j'ai réalisé un important travail de post-production : détourage minutieux des montures, intégration dans des décors réalistes, gestion technique de la profondeur de champ et ajustements colorimétriques. L'enjeu majeur a été d'appliquer les codes visuels stricts du luxe (hiérarchie épurée, typographie précise) tout en intégrant l'identité de l'enseigne locale.
+              </p>
+            </div>
+
+            {/* Carte 2 */}
+            <div className={`p-6 border ${isDarkMode ? 'border-zinc-700 bg-zinc-800/50' : 'border-blue-500/10 bg-blue-500/5'}`}>
+              <h3 className="text-blue-500 font-bold mb-4 text-sm uppercase tracking-wide flex items-center gap-2">
+                <Globe size={18} /> Stratégie Digitale
+              </h3>
+              <p className={`text-sm leading-relaxed text-content ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                Ma mission a également comporté un axe technique central avec la création intégrale de leur site internet sous WordPress. L'objectif était de construire une véritable vitrine en ligne reflétant parfaitement le positionnement qualitatif des produits proposés en magasin. J'ai pris en charge la production et l'intégration de contenus multimédias, et j'ai implémenté divers systèmes interactifs (comme la messagerie et la prise de rendez-vous). En appliquant mes compétences en UX/UI design, j'ai rendu la navigation fluide et esthétique, assurant une cohérence globale avec les réseaux sociaux.
+              </p>
+            </div>
+
+            {/* Carte 3 */}
+            <div className={`p-6 border ${isDarkMode ? 'border-zinc-700 bg-zinc-800/50' : 'border-green-500/10 bg-green-500/5'}`}>
+              <h3 className="text-green-500 font-bold mb-4 text-sm uppercase tracking-wide flex items-center gap-2">
+                <Users size={18} /> Immersion & Équipe
+              </h3>
+              <p className={`text-sm leading-relaxed text-content ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                Enfin, ce stage a été une véritable immersion dans la vie d'un commerce indépendant, me permettant de lier mes compétences techniques à une réalité de terrain. J'ai travaillé en collaboration directe avec la directrice et les opticiennes, ce qui m'a permis de comprendre les enjeux commerciaux de la boutique pour les retranscrire efficacement en solutions numériques. Ma communication avec l'ensemble de l'équipe n'a cessé de s'améliorer tout au long du stage, me permettant d'ajuster mes propositions créatives aux attentes précises d'une clientèle locale et exigeante.
+              </p>
+            </div>
+
+          </div>
         </section>
 
       </div>
