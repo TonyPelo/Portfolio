@@ -11,12 +11,12 @@ const Header = ({ isDarkMode, toggleTheme, scrolled }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  // Liste des projets pour le menu déroulant
+// Liste des projets pour le menu déroulant
   const projectLinks = [
-    { name: 'Graphique', path: '/graphique' },
     { name: 'Communication', path: '/communication' },
-    { name: 'Jeu', path: '/jeu' },
-    { name: 'Développement', path: '/developpement' } // <-- NOUVEAU LIEN ICI
+    { name: 'Graphique', path: '/graphique' },
+    { name: 'Développement', path: '/developpement' },
+    { name: 'Jeu Vidéo', path: '/jeu' } 
   ];
 
   return (
