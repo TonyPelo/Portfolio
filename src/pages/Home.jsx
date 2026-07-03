@@ -26,12 +26,12 @@ const Home = ({ isDarkMode }) => {
     { name: 'MariaDB', img: '/logos/MariaDB.png' }, 
   ];
 
-  // --- DOMAINES D'EXPERTISE ---
+  // --- DOMAINES D'EXPERTISE (NOUVEL ORDRE) ---
   const categories = [
-    { title: "Graphique", icon: <Palette size={40} />, path: "/graphique", desc: "Identité visuelle, UI Design & Print" },
-    { title: "Jeu Vidéo", icon: <Gamepad2 size={40} />, path: "/jeu", desc: "Game Design, Level Design & Source 2" },
     { title: "Communication", icon: <Megaphone size={40} />, path: "/communication", desc: "Stratégie digitale & Création de contenu" },
-    { title: "Développement", icon: <Code size={40} />, path: "/developpement", desc: "Front-end, React & Intégration Web" }
+    { title: "Graphique", icon: <Palette size={40} />, path: "/graphique", desc: "Identité visuelle, UI Design & Print" },
+    { title: "Développement", icon: <Code size={40} />, path: "/developpement", desc: "Front-end, React & Intégration Web" },
+    { title: "Jeu Vidéo", icon: <Gamepad2 size={40} />, path: "/jeu", desc: "Game Design, Level Design & Source 2" }
   ];
 
   // --- SCROLL VERS CONTACT ---
@@ -98,8 +98,8 @@ const Home = ({ isDarkMode }) => {
           </div>
 
           <div className="max-w-md">
-            <h3 className="text-orange-500 uppercase tracking-widest text-xs border-l-4 border-orange-500 pl-3 mb-3 title-section">Projet Phare</h3>
-            {/* MODIFICATION ICI : STAGE L'OPTICIENNE DE ROMAINVILLE */}
+            {/* MODIFICATION ICI : "Expérience Professionnelle" au lieu de "Projet Phare" */}
+            <h3 className="text-orange-500 uppercase tracking-widest text-xs border-l-4 border-orange-500 pl-3 mb-3 title-section">Expérience Professionnelle</h3>
             <div onClick={() => navigate('/stage')} className={`border-2 border-orange-500/30 overflow-hidden hover:border-orange-500 transition-all hover:shadow-xl hover:shadow-orange-500/20 group cursor-pointer ${isDarkMode ? 'bg-zinc-900' : 'bg-gray-50'}`}>
               <div className={`h-32 bg-gradient-to-br flex items-center justify-center text-5xl border-b-2 border-orange-500/30 group-hover:border-orange-500 transition-colors ${isDarkMode ? 'from-orange-500/20 to-black' : 'from-orange-500/20 to-gray-100'}`}>👓</div>
               <div className="p-4">
@@ -137,7 +137,6 @@ const Home = ({ isDarkMode }) => {
               Mon approche allie esthétique industrielle et fonctionnalité moderne. Spécialisé dans la communication visuelle, le développement front-end et le game design, j'apporte une vision créative et technique à chaque projet.
             </p>
             
-            {/* MODIFICATION ICI : RECHERCHE ALTERNANCE */}
             <p className="font-bold text-orange-500 uppercase tracking-wide">
                 ⚡ Recherche d'alternance : Septembre prochain.
             </p>
