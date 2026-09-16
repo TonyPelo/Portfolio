@@ -101,7 +101,6 @@ const Home = ({ isDarkMode }) => {
             <h3 className="text-orange-500 uppercase tracking-widest text-xs border-l-4 border-orange-500 pl-3 mb-3 title-section">Expérience Professionnelle</h3>
             
             <div onClick={() => navigate('/stage')} className={`border-2 border-orange-500/30 overflow-hidden hover:border-orange-500 transition-all hover:shadow-xl hover:shadow-orange-500/20 group cursor-pointer ${isDarkMode ? 'bg-zinc-900' : 'bg-gray-50'}`}>
-              {/* REMPLACEMENT DU FOND LUNETTES PAR L'IMAGE STAGE.WEBP */}
               <div className="h-32 relative overflow-hidden border-b-2 border-orange-500/30 group-hover:border-orange-500 transition-colors">
                  <img src="/images/Stage.webp" alt="L'Opticienne de Romainville" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300"></div>
@@ -143,7 +142,7 @@ const Home = ({ isDarkMode }) => {
             </p>
             
             <p className="font-bold text-orange-500 uppercase tracking-wide mt-6">
-                ⚡ Recherche d'alternance : Septembre prochain.
+                ⚡ Recherche d'alternance
             </p>
           </div>
         </div>
