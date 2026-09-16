@@ -98,10 +98,15 @@ const Home = ({ isDarkMode }) => {
           </div>
 
           <div className="max-w-md">
-            {/* MODIFICATION ICI : "Expérience Professionnelle" au lieu de "Projet Phare" */}
             <h3 className="text-orange-500 uppercase tracking-widest text-xs border-l-4 border-orange-500 pl-3 mb-3 title-section">Expérience Professionnelle</h3>
+            
             <div onClick={() => navigate('/stage')} className={`border-2 border-orange-500/30 overflow-hidden hover:border-orange-500 transition-all hover:shadow-xl hover:shadow-orange-500/20 group cursor-pointer ${isDarkMode ? 'bg-zinc-900' : 'bg-gray-50'}`}>
-              <div className={`h-32 bg-gradient-to-br flex items-center justify-center text-5xl border-b-2 border-orange-500/30 group-hover:border-orange-500 transition-colors ${isDarkMode ? 'from-orange-500/20 to-black' : 'from-orange-500/20 to-gray-100'}`}>👓</div>
+              {/* REMPLACEMENT DU FOND LUNETTES PAR L'IMAGE STAGE.WEBP */}
+              <div className="h-32 relative overflow-hidden border-b-2 border-orange-500/30 group-hover:border-orange-500 transition-colors">
+                 <img src="/images/Stage.webp" alt="L'Opticienne de Romainville" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-300"></div>
+              </div>
+              
               <div className="p-4">
                 <div className="flex items-center gap-2 mb-2"><div className="w-2 h-2 bg-orange-500 animate-pulse"></div><span className="text-orange-500 uppercase text-xs tracking-widest">Stage</span></div>
                 <h4 className={`text-base font-bold mb-2 uppercase ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>L'Opticienne de Romainville</h4>
@@ -123,7 +128,7 @@ const Home = ({ isDarkMode }) => {
           <div className={`leading-relaxed mb-4 text-sm sm:text-base text-content ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}>
             <p className="mb-4 leading-relaxed border-l-2 border-orange-500 pl-3">
               <span className={`font-bold block text-lg ${isDarkMode ? 'text-white' : 'text-black'}`}>
-                BUT2 Métiers du Multimédia et de l'Internet (MMI)
+                BUT3 Métiers du Multimédia et de l'Internet (DUT Obtenu)
               </span>
               <span className="block text-orange-500 font-bold">IUT de Bobigny</span>
               <span className="italic">Parcours Stratégie de communication numérique et Design d'expérience.</span>
@@ -133,11 +138,11 @@ const Home = ({ isDarkMode }) => {
               Passionné par la création d'expériences digitales uniques, je combine design graphique et développement web pour donner vie à des projets innovants.
             </p>
             
-            <p className="mb-4 leading-relaxed">
-              Mon approche allie esthétique industrielle et fonctionnalité moderne. Spécialisé dans la communication visuelle, le développement front-end et le game design, j'apporte une vision créative et technique à chaque projet.
+            <p className="mb-4 leading-relaxed font-bold">
+              Métiers visés : Designer UX/UI • Webdesigner • Chargé de communication • Content Manager
             </p>
             
-            <p className="font-bold text-orange-500 uppercase tracking-wide">
+            <p className="font-bold text-orange-500 uppercase tracking-wide mt-6">
                 ⚡ Recherche d'alternance : Septembre prochain.
             </p>
           </div>

@@ -28,7 +28,7 @@ const Stage = ({ isDarkMode }) => {
       {/* EN-TÊTE DE LA PAGE */}
       <header className="max-w-6xl mx-auto px-4 sm:px-6 mb-16 text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1 mb-6 border border-orange-500 text-orange-500 text-xs uppercase tracking-widest bg-orange-500/10 rounded-full">
-          <Calendar size={14} /> Stage de fin d'études • 2025
+          <Calendar size={14} /> Stage de fin d'études • 2026
         </div>
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-orange-500 title-main">
           L'OPTICIENNE DE ROMAINVILLE
@@ -67,22 +67,28 @@ const Stage = ({ isDarkMode }) => {
               </div>
               <div className="mt-8">
                 <a 
-                  href="https://opticienne-romainville.com" 
+                  href="https://dev-opticienne-de-romainville.pantheonsite.io/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-black font-bold py-3 px-6 uppercase tracking-widest text-xs transition-colors"
                 >
-                  <Globe size={16} /> Visiter le site web
+                  <Globe size={16} /> Visiter le site web (Version Dev)
                   <ArrowRight size={16} />
                 </a>
               </div>
             </div>
             
-            {/* Visuel illustratif du site */}
-            <div className="bg-zinc-800 min-h-[300px] relative flex items-center justify-center p-8">
-              <div className="text-center">
-                <Globe size={64} className="mx-auto text-orange-500/50 mb-4" />
-                <p className="font-mono text-orange-500/70">opticienne-romainville.com</p>
+            {/* Visuel illustratif du site remplacé par Stage.webp */}
+            <div className="bg-zinc-800 min-h-[300px] relative overflow-hidden group flex items-center justify-center">
+              <img 
+                src="/images/Stage.webp" 
+                alt="Site Web Opticienne Romainville" 
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute bottom-4 left-4 right-4 bg-black/80 p-4 border-l-4 border-orange-500 backdrop-blur-sm z-10">
+                <p className="text-white font-bold uppercase tracking-widest text-xs flex items-center gap-2">
+                  <Globe size={14} /> opticienne-romainville.com
+                </p>
               </div>
             </div>
           </div>
